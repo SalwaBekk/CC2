@@ -6,6 +6,11 @@
     <string name="btnLister">Lister de tous les entreprises</string>
     <string name="btnEnrg">Enregistrer</string>
     <string name="btnAnnul">Annuler</string>
-
+    <string name="hint1">Tapez votre Raison Sociale...</string>
+    <string name="hint2">Tapez votre Adresse...</string>
+    <string name="hint3">Tapez votre Capitale...</string>
+    <string name="btnModif">Modifier</string>
+    <string name="btnsupp">Supprimer</string>
+    <string name="titreEdit">Editer une entreprise</string>
 
 </resources>
