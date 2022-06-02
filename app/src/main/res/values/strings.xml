@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CC2 TDI202</string>
+
+    <string name="btnAjouter">Ajouter une entreprise</string>
+    <string name="btnEditer">Editer une entreprise</string>
+    <string name="btnLister">Lister de tous les entreprises</string>
 </resources>
