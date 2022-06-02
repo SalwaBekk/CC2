@@ -41,12 +41,13 @@
         android:layout_marginTop="200dp"
         android:hint="@string/hint3"
         style="@style/TextAvtivite"/>
+
     <Button
+        style="@style/btnavtivite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/btnavtivite"
-        android:text="@string/btnModif"
-        android:onClick="modifier"/>
+        android:onClick="modifier"
+        android:text="@string/btnModif" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

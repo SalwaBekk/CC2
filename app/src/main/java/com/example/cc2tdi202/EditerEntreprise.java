@@ -25,16 +25,17 @@ public class EditerEntreprise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_editer_entreprise );
+        db=new MyDatabase(this );
         e1=findViewById( R.id.Rsocial );
         e2=findViewById( R.id.adresse );
         e3=findViewById( R.id.capitale );
-        db=new MyDatabase(this );
+
         sp=findViewById( R.id.spn );
         entr = MyDatabase.getAllEntreprise(db.getReadableDatabase());
 
         ArrayList<String> IDEntreprise = new ArrayList<>();
-        for(Entreprise pp: entr)
-            IDEntreprise.add(String.valueOf(pp.getId()));
+        for(Entreprise e: entr)
+            IDEntreprise.add(String.valueOf(e.getId()));
 
         ad = new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,IDEntreprise);
         sp.setAdapter(ad);
