@@ -4,4 +4,8 @@
     <string name="btnAjouter">Ajouter une entreprise</string>
     <string name="btnEditer">Editer une entreprise</string>
     <string name="btnLister">Lister de tous les entreprises</string>
+    <string name="btnEnrg">Enregistrer</string>
+    <string name="btnAnnul">Annuler</string>
+
+
 </resources>
