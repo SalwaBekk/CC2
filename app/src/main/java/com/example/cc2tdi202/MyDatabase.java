@@ -36,4 +36,57 @@ public class MyDatabase extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+    public static long AddEntreprise(SQLiteDatabase db, Entreprise e){
+        ContentValues ct = new ContentValues();
+        ct.put(COL2,e.getRaisonSociale());
+        ct.put(COL3,e.getAdresse());
+        ct.put(COL4,e.getCapitale());
+        return db.insert(TABLE_NAME,null,ct);
+    }
+
+    public static long UpdateEntreprise(SQLiteDatabase db, Entreprise e){
+        ContentValues ct = new ContentValues();
+        ct.put(COL2,e.getRaisonSociale());
+        ct.put(COL3,e.getAdresse());
+        ct.put(COL4,e.getCapitale());
+        return db.update(TABLE_NAME,ct,"id="+e.getId(),null);
+    }
+
+    public static long DeleteEntreprise(SQLiteDatabase db, int id){
+        return db.delete(TABLE_NAME,"id="+id,null);
+    }
+
+    public static ArrayList<Entreprise> getAllEntreprise(SQLiteDatabase db){
+        ArrayList<Entreprise> entr = new ArrayList<>();
+
+        Cursor cur = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+
+        while(cur.moveToNext()){
+            Entreprise e = new Entreprise();
+            e.setId(cur.getInt(0));
+            e.setRaisonSociale(cur.getString(1));
+            e.setAdresse(cur.getString(2));
+            e.setCapitale(cur.getDouble(3));
+            entr.add(e);
+        }
+
+        return entr;
+    }
+
+    public static Entreprise getOneEntreprise(SQLiteDatabase db, int id){
+        Entreprise e = null;
+
+        Cursor cur = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE id = " + id,null);
+
+        if(cur.moveToNext()){
+            e = new Entreprise();
+            e.setId(cur.getInt(0));
+            e.setRaisonSociale(cur.getString(1));
+            e.setAdresse(cur.getString(2));
+            e.setCapitale(cur.getDouble(3));
+        }
+
+        return e;
+    }
+
 }
